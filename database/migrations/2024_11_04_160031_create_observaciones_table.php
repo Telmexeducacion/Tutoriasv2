@@ -22,7 +22,7 @@ class CreateObservacionesTable extends Migration
             $table->text('detalle');
             $table->timestamps();
 
-            $table->foreign('equipo_id')->references('id')->on('equipos')->onDelete('cascade');
+            $table->foreign('equipo_id')->references('id')->on('equipos_sede')->onDelete('cascade');
             $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
         });
     }

@@ -23,7 +23,7 @@ class CreateSeguimientoCambiosSedesTable extends Migration
             $table->text('motivo')->nullable();
             $table->timestamps();
 
-            $table->foreign('equipo_id')->references('id')->on('equipos')->onDelete('cascade');
+            $table->foreign('equipo_id')->references('id')->on('equipos_sede')->onDelete('cascade');
             $table->foreign('sede_anterior_id')->references('id')->on('sedes')->onDelete('cascade');
             $table->foreign('sede_nueva_id')->references('id')->on('sedes')->onDelete('cascade');
             $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');

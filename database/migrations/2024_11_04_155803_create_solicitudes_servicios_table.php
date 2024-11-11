@@ -25,7 +25,7 @@ class CreateSolicitudesServiciosTable extends Migration
             $table->date('fecha_cierre')->nullable();
             $table->timestamps();
 
-            $table->foreign('equipo_id')->references('id')->on('equipos')->onDelete('cascade');
+            $table->foreign('equipo_id')->references('id')->on('equipos_sede')->onDelete('cascade');
             $table->foreign('sede_id')->references('id')->on('sedes')->onDelete('cascade');
             $table->foreign('gadget_id')->references('id')->on('gadgets')->onDelete('cascade');
         });

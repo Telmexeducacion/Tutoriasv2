@@ -19,7 +19,7 @@ class EquiposGadgets extends Migration
             $table->unsignedInteger('gadget_id');
             $table->timestamps();
 
-            $table->foreign('equipo_id')->references('id')->on('equipos')->onDelete('cascade');
+            $table->foreign('equipo_id')->references('id')->on('equipos_sede')->onDelete('cascade');
             $table->foreign('gadget_id')->references('id')->on('gadgets')->onDelete('cascade');
         });
     }
