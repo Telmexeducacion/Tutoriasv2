@@ -15,7 +15,7 @@ class CreateTurnosTable extends Migration
     {
         Schema::create('turnos', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('escuela_id')->unsigned();
+            $table->unsignedInteger('escuela_id')->unsigned();
             $table->string('nombre', 255); // Nombre del turno (Matutino, Vespertino)
             $table->timestamps();
             $table->foreign('escuela_id')->references('id')->on('escuelas')->onDelete('cascade');

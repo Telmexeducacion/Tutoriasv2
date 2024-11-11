@@ -15,11 +15,11 @@ class CreateMovimientosMobiliariosTable extends Migration
     {
         Schema::create('movimientos_mobiliarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('desde_escuela_id')->unsigned();
-            $table->bigInteger('hacia_escuela_id')->unsigned();
-            $table->bigInteger('solicitado_por')->unsigned();
-            $table->bigInteger('aprobado_por')->unsigned()->nullable();
-            $table->tinyInteger('estado_id')->unsigned();
+            $table->unsignedInteger('desde_escuela_id');
+            $table->unsignedInteger('hacia_escuela_id');
+            $table->unsignedInteger('solicitado_por');
+            $table->unsignedInteger('aprobado_por')->nullable();
+            $table->unsignedInteger('estado_id');
             $table->text('observaciones')->nullable();
             $table->timestamp('solicitado_en')->nullable();
             $table->timestamp('aprobado_en')->nullable();
@@ -29,7 +29,7 @@ class CreateMovimientosMobiliariosTable extends Migration
             $table->foreign('desde_escuela_id')->references('id')->on('escuelas')->onDelete('restrict');
             $table->foreign('hacia_escuela_id')->references('id')->on('escuelas')->onDelete('restrict');
             $table->foreign('solicitado_por')->references('id')->on('tutores')->onDelete('cascade');
-            $table->foreign('aprobado_por')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('aprobado_por')->references('id')->on('users')->onDelete('set null'); // Corregido: onDelete('set null')
             $table->foreign('estado_id')->references('id')->on('estado_movimientos')->onDelete('restrict');
         });
     }

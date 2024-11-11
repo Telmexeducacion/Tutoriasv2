@@ -15,8 +15,8 @@ class CreateNotificacionesUsuariosTable extends Migration
     {
         Schema::create('notificaciones_usuarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('notificacion_id')->unsigned();
-            $table->bigInteger('usuario_id')->unsigned();
+            $table->unsignedInteger('notificacion_id');
+            $table->unsignedInteger('usuario_id');
             $table->boolean('leida')->default(false); // Indica si el usuario ha leído la notificación
             $table->timestamp('leida_en')->nullable(); // Fecha y hora en que se leyó la notificación
             $table->timestamps();

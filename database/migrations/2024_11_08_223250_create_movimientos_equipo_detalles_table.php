@@ -15,8 +15,8 @@ class CreateMovimientosEquipoDetallesTable extends Migration
     {
         Schema::create('movimientos_equipo_detalles', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('movimiento_equipo_id')->unsigned();
-            $table->bigInteger('equipo_id')->unsigned();
+            $table->unsignedInteger('movimiento_equipo_id')->unsigned();
+            $table->unsignedInteger('equipo_id')->unsigned();
             $table->timestamps();
             $table->foreign('movimiento_equipo_id')->references('id')->on('movimientos_equipos')->onDelete('cascade');
             $table->foreign('equipo_id')->references('id')->on('equipos')->onDelete('cascade');

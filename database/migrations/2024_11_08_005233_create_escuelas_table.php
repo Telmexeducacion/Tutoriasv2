@@ -18,10 +18,10 @@ class CreateEscuelasTable extends Migration
             $table->string('nombre', 255);
             $table->string('codigo', 50)->unique(); // Clave única de la escuela
             $table->string('direccion', 255);
-            $table->bigInteger('estado_id')->unsigned();
-            $table->bigInteger('aporta')->unsigned()->nullable();
-            $table->bigInteger('paga')->unsigned()->nullable();
-            $table->bigInteger('facturacion')->unsigned()->nullable();
+            $table->unsignedInteger('estado_id');
+            $table->unsignedInteger('aporta')->nullable();
+            $table->unsignedInteger('paga')->nullable();
+            $table->unsignedInteger('facturacion')->nullable();
             $table->timestamps();
 
 

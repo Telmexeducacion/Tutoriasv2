@@ -15,7 +15,7 @@ class CreateCondicionesEdificiosTable extends Migration
     {
         Schema::create('condiciones_edificios', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('escuela_id')->unsigned();
+            $table->unsignedInteger('escuela_id');
             $table->date('fecha_evaluacion'); // Fecha de la evaluación
             $table->tinyInteger('estado_pintura')->unsigned(); // Escala numérica (1-5)
             $table->boolean('problemas_estructurales')->default(false); // Indica si hay problemas estructurales

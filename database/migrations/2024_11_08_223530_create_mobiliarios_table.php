@@ -15,10 +15,10 @@ class CreateMobiliariosTable extends Migration
     {
         Schema::create('mobiliarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('tipo_mobiliario_id')->unsigned();
-            $table->bigInteger('escuela_id')->unsigned();
+            $table->unsignedInteger('tipo_mobiliario_id');
+            $table->unsignedInteger('escuela_id');
             $table->string('numero_inventario', 100)->nullable();
-            $table->tinyInteger('estado_id')->unsigned();
+            $table->unsignedInteger('estado_id');
             $table->text('descripcion')->nullable();
             $table->timestamps();
 

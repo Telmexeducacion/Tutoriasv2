@@ -15,7 +15,7 @@ class CreateHistorialEquiposTable extends Migration
     {
         Schema::create('historial_equipos', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('equipo_id')->unsigned();
+            $table->unsignedInteger('equipo_id');
             $table->string('accion', 100); // Ejemplos: Mantenimiento, Reparación, Actualización
             $table->text('descripcion')->nullable();
             $table->text('realizado_por')->nullable();

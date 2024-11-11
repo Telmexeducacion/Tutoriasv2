@@ -15,8 +15,8 @@ class CreateMovimientoMobiliarioDetallesTable extends Migration
     {
         Schema::create('movimiento_mobiliario_detalles', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('movimiento_mobiliario_id')->unsigned();
-            $table->bigInteger('mobiliario_id')->unsigned();
+            $table->unsignedInteger('movimiento_mobiliario_id');
+            $table->unsignedInteger('mobiliario_id');
             $table->timestamps();
             // Claves foráneas
             $table->foreign('movimiento_mobiliario_id')->references('id')->on('movimientos_mobiliarios')->onDelete('cascade');

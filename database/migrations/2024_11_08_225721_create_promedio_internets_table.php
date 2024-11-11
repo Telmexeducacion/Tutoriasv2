@@ -15,7 +15,7 @@ class CreatePromedioInternetsTable extends Migration
     {
         Schema::create('promedio_internet', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('escuela_id')->unsigned();
+            $table->unsignedInteger('escuela_id');
             $table->tinyInteger('mes')->unsigned(); // Mes (1-12)
             $table->smallInteger('año')->unsigned(); // Año
             $table->decimal('gb_recibidos', 10, 2); // Gigabytes recibidos

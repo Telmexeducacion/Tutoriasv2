@@ -15,11 +15,10 @@ class CreateTutorEscuelasTable extends Migration
     {
         Schema::create('tutor_escuelas', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('tutor_id')->unsigned();
-            $table->bigInteger('escuela_id')->unsigned();
+            $table->unsignedInteger('tutor_id');
+            $table->unsignedInteger('escuela_id');
             $table->timestamp('asignado_en')->nullable();
-            $table->timestamp('creado_en')->nullable();
-            $table->timestamp('actualizado_en')->nullable();
+
 
             // Claves foráneas
             $table->foreign('tutor_id')->references('id')->on('tutores')->onDelete('cascade');

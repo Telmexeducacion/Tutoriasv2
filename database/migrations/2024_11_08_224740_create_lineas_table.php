@@ -15,10 +15,10 @@ class CreateLineasTable extends Migration
     {
         Schema::create('lineas', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('escuela_id')->unsigned();
+            $table->unsignedInteger('escuela_id');
             $table->string('numero_linea', 20)->unique();
             $table->decimal('ancho_banda', 10, 2); // Ancho de banda contratado en Mbps
-            $table->tinyInteger('tecnologia_id')->unsigned();
+            $table->unsignedInteger('tecnologia_id');
             $table->string('nombre_paquete', 255);
             $table->decimal('costo_paquete', 10, 2);
             $table->date('vigencia_servicio');

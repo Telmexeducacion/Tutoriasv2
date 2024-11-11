@@ -15,10 +15,10 @@ class CreateHistoricoLineasTable extends Migration
     {
         Schema::create('historico_lineas', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('linea_id')->unsigned();
+            $table->unsignedInteger('linea_id')->unsigned();
             $table->string('numero_linea', 20);
             $table->date('fecha_fin')->nullable(); // Fecha en que dejó de usarse (NULL si es el número actual)
-            $table->bigInteger('usuario_movimiento')->unsigned();
+            $table->unsignedInteger('usuario_movimiento')->nullable();;
             $table->string('comentario_final', 255)->nullable();
             $table->timestamps();
             // Claves foráneas

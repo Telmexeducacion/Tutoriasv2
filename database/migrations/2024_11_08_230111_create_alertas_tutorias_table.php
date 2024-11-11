@@ -17,7 +17,7 @@ class CreateAlertasTutoriasTable extends Migration
             $table->increments('id');
             $table->string('tipo', 50); // Tipo de alerta (Internet, Equipo, etc.)
             $table->text('descripcion'); // Detalles de la alerta
-            $table->bigInteger('escuela_id')->unsigned()->nullable(); // Referencia opcional a la escuela
+            $table->unsignedInteger('escuela_id')->nullable(); // Referencia opcional a la escuela
             $table->boolean('leida')->default(false); // Indica si la alerta ha sido leída
             $table->timestamps();
             $table->foreign('escuela_id')->references('id')->on('escuelas')->onDelete('set null');

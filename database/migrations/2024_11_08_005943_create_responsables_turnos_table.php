@@ -15,7 +15,7 @@ class CreateResponsablesTurnosTable extends Migration
     {
         Schema::create('responsables_turno', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('turno_id')->unsigned();
+            $table->unsignedInteger('turno_id');
             $table->string('nombre', 255);
             $table->string('cargo', 255); // Cargo del responsable (Director, Encargado del Aula)
             $table->string('telefono', 20)->nullable();

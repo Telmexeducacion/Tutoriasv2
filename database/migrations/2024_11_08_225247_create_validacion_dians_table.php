@@ -15,8 +15,8 @@ class CreateValidacionDiansTable extends Migration
     {
         Schema::create('validacion_dians', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('linea_id')->unsigned();
-            $table->bigInteger('usuario_id')->unsigned();
+            $table->unsignedInteger('linea_id');
+            $table->unsignedInteger('usuario_id');
             $table->date('fecha_validacion');
             $table->decimal('ancho_banda_validado', 10, 2); // Ancho de banda validado en Mbps
             $table->text('observaciones')->nullable();

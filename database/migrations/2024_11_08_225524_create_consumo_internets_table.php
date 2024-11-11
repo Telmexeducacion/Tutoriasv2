@@ -15,7 +15,7 @@ class CreateConsumoInternetsTable extends Migration
     {
         Schema::create('consumo_internets', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('linea_id')->unsigned();
+            $table->unsignedInteger('linea_id');
             $table->tinyInteger('mes')->unsigned(); // Mes (1-12)
             $table->smallInteger('año')->unsigned(); // Año
             $table->decimal('gb_recibidos', 10, 2); // Gigabytes recibidos

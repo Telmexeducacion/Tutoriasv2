@@ -15,13 +15,13 @@ class CreateTutoresTable extends Migration
     {
         Schema::create('tutores', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('usuario_id')->unsigned();
+            $table->unsignedInteger('usuario_id');
             $table->string('nombre', 255);
             $table->string('telefono', 20);
             $table->string('celular', 20);
             $table->string('correo', 255);
             $table->longText('NotasPersonales');
-            $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
+            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

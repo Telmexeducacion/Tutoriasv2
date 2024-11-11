@@ -15,10 +15,10 @@ class CreateVideollamadasTable extends Migration
     {
         Schema::create('videollamadas', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('tutor_id')->unsigned();
-            $table->bigInteger('escuela_id')->unsigned();
-            $table->bigInteger('turno_id')->unsigned()->nullable(); // Clave foránea opcional
-            $table->bigInteger('estatus_id')->unsigned();
+            $table->unsignedInteger('tutor_id');
+            $table->unsignedInteger('escuela_id');
+            $table->unsignedInteger('turno_id')->nullable(); // Clave foránea opcional
+            $table->unsignedInteger('estatus_id');
             $table->string('enlace')->nullable();
             $table->dateTime('programada_para'); // Fecha y hora programada
             $table->dateTime('realizada_en')->nullable(); // Fecha y hora de realización

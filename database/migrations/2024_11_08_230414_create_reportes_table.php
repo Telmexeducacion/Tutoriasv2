@@ -15,12 +15,12 @@ class CreateReportesTable extends Migration
     {
         Schema::create('reportes', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('tutor_id')->unsigned();
-            $table->bigInteger('escuela_id')->unsigned();
-            $table->bigInteger('turno_id')->unsigned()->nullable(); // Turno es opcional
+            $table->unsignedInteger('tutor_id');
+            $table->unsignedInteger('escuela_id');
+            $table->unsignedInteger('turno_id')->nullable(); // Turno es opcional
             $table->string('titulo', 255); // Título del reporte
             $table->text('descripcion'); // Detalles de la incidencia
-            $table->tinyInteger('estado_id')->unsigned(); // Estado del reporte
+            $table->unsignedInteger('estado_id'); // Estado del reporte
             $table->timestamps();
 
              // Claves foráneas
